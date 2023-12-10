@@ -23,8 +23,10 @@ body{
 .box1 {
     width: 100px;
     height: 100px;
-    background-color: lightblue;
-    border: 2px solid darkblue;
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .box1_1 {
     width: 100px;
