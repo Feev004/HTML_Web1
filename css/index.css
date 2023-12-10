@@ -1,14 +1,55 @@
-div{
-    width: 100px;
-    height: 100px;
-    border: 3px solid black;
-    background-color: lightblue;
+body{
+    font-family: 'Itim', cursive;
+    margin: 10px;
 }
 
-p {
-    font-family: 'Itim', cursive;
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+
+.container3 {
+    display: flex;
+    align-items: center;
+}
+
+.box1 {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    border: 2px solid darkblue;
+}
+.box1_1 {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    border: 2px solid darkblue;
+}
+
+.box2 {
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    border: 2px solid darkblue;
+}
+
+.box3 {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    border: 2px solid darkblue;
 }
 
 h5{
     font-family: 'Kanit', sans-serif;
 }
+
+*{background-color: rgb(255, 171, 171);}
