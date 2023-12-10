@@ -23,11 +23,16 @@ body{
 }
 
 .box2 {
-    width: 50%;
-    height: 250px;
+    width: 60%;
+    height: 447px;
+    border: 2px solid darkblue;
+}
+.box2_1 {
+    width: 40%;
+    height: 50%;
     overflow: hidden;
 }
-.box2 img {
+.box2_1 img {
     width: 100%;
     height: auto;
     display: block;
