@@ -13,3 +13,9 @@ body {
 div img{
     width: 30%;
 }
+
+div a{
+    margin-right: 10px;
+    display: block;
+    text-align: right;
+}

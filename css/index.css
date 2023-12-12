@@ -49,6 +49,10 @@ body {
     display: flex;
     flex-direction: column;
 }
+.con2 div a{
+    margin-top: 170px;
+}
+
 .con2 div:nth-of-type(2){
     height: 100%;
     width: 50%;
