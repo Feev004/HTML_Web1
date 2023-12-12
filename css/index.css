@@ -1,6 +1,6 @@
 body {
     background-color: rgb(255, 171, 171);
-    display: flex;
+    /*display: flex;*/
     height: 100vh;
 }
 
@@ -12,10 +12,9 @@ body {
 }
 
 .con1{
-    flex-direction: column;
     display: flex;
-    border: 1px solid red;
-    width: 50%;
+    width: 100%;
+    height: 50%;
     overflow: hidden;
 }
 .con1 > div{
@@ -23,10 +22,9 @@ body {
 }
 
 .con2{
-    flex-direction: column;
     display: flex;
-    border: 1px solid red;
-    width: 50%;
+    width: 100%;
+    height: 50%;
 }
 .con2 > div{
     overflow: hidden;
@@ -34,23 +32,25 @@ body {
 }
 
 .con1 div:nth-of-type(1){
-    height: 50%;
-    width: 100%;
-    border: 1px solid blue;
+    height: 100%;
+    width: 50%;
 }
 .con1 div:nth-of-type(2){
-    height: 50%;
-    width: 100%;
-    border: 1px solid blue;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
 }
 
 .con2 div:nth-of-type(1){
-    height: 50%;
-    width: 100%;
-    border: 1px solid blue;
+    height: 100%;
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 .con2 div:nth-of-type(2){
-    height: 50%;
-    width: 100%;
-    border: 1px solid blue;
+    height: 100%;
+    width: 50%;
 }
