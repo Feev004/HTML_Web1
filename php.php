@@ -16,6 +16,7 @@
     $group = "Faculty of Industrial Technology and Management";
     $Department = "IT";
     $course = "62062014 : Information Technology branch";
+    echo '<center>';
     echo $tag,"\t";
     echo $name,"\t";
     echo $sur_name;
@@ -29,6 +30,7 @@
     echo "ภาควิชาเรียน : ", $Department;
     echo "<br>";
     echo "หลักสูตร : ", $course;
+    echo '</center>';
     ?>
 </body>
 </html>
