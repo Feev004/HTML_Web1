@@ -20,6 +20,7 @@
     echo 'ช่องทางการติดต่อ : <a href="https://www.instagram.com/fewrojjanai/">https://www.instagram.com/fewrojjanai/</a>';
     echo '</center>';
     echo '<div><a href="tip.php">go to tip</a></div>';
+    echo '<div><a href="php.php">go to php</a></div>';
     ?>
 </body>
 </html>

@@ -31,6 +31,7 @@
     echo "<br>";
     echo "หลักสูตร : ", $course;
     echo '</center>';
+    echo '<div><a href="index.php">go profile</a></div>';
     ?>
 </body>
 </html>
