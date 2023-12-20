@@ -15,15 +15,15 @@
     $myphone = "0957513508";
     $group = "Faculty of Industrial Technology and Management";
     $Department = "IT";
-    $course = "62062014 : Information Technology branch";
+    $course = "62062014 Information Technology branch";
     echo '<center>';
     echo $tag,"\t";
     echo $name,"\t";
     echo $sur_name;
     echo "<br>";
-    echo "พักอยู่ที่",$home;
+    echo "พักอยู่ที่ : ",$home;
     echo "<br>";
-    echo "เบอร์โทรศัพท์ ",$myphone;
+    echo "เบอร์โทรศัพท์ : ",$myphone;
     echo "<br>";
     echo "คณะ : ", $group;
     echo "<br>";
