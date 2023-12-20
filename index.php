@@ -11,7 +11,7 @@
     echo '<h1>Profile</h1>';
     echo '<hr width="100%">';
     echo '<center>';
-    echo '<div><img src="https://scontent.fbkk21-1.fna.fbcdn.net/v/t39.30808-6/387060453_350452920735953_2709676728739347390_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=9c7eae&_nc_eui2=AeHWEGvfEFZjXqkF57l1XYPEOtIlk4tC8Tc60iWTi0LxN1Fynmq1TEHxs0zrTerJ-sgbRaNrCMbaT0B6scLq3YTV&_nc_ohc=RDuNe04oXh4AX-DQjb8&_nc_ht=scontent.fbkk21-1.fna&oh=00_AfAxFl91soSCiekWz6h04oRmbTS2lo7YhHj6ceHqOjF8Dg&oe=657D6538" alt=""></div>';
+    echo '<div><img src="https://avatars.githubusercontent.com/u/120434445?s=400&u=e3f000a3f74da8d133e342d3211a99ff2a5080f7&v=4" alt=""></div>';
     echo '<p>นายรัฐศาสตร์ รจนัย</p>';
     echo '<p>รหัส : 6506021612013</p>';
     echo '<p>สาขา : IT</p>';
