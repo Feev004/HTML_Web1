@@ -21,7 +21,7 @@
     echo '</center>';
     echo '<div><a href="tip.php">go to tip</a></div>';
     echo '<div><a href="php.php">go to php</a></div>';
-    echo '<div><a href="calcurate.php">calculate</a></div>';
+    echo '<div><a href="./calcurate/calcurate.php">calculate</a></div>';
     ?>
 </body>
 </html>

@@ -29,7 +29,7 @@
         </tr>
         <tr>
         <td colspan="2" align="center">
-        <div><a href="./calcurate.php">calcurate</a></div>
+        <div><a href="calcurate.php">calcurate</a></div>
         </td>
         </tr>
         </table>
