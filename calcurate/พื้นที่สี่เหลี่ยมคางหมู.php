@@ -7,9 +7,10 @@
 </head>
 <body>
     <?php
-    $SumOfParallelSides = 7;
+    $SumOfParallelSides1 = 7;
+    $SumOfParallelSides2 = 5;
     $height = 5;
-    $sum = ($height * $SumOfParallelSides) / 2;
+    $sum = ($height * ($SumOfParallelSides1 + $SumOfParallelSides2)) / 2;
     ?>
     <table border="1" align="center" width="400">
         <tr>
@@ -18,8 +19,12 @@
         </td>
         <tr>
         <tr>
-        <td align="laft">Sum of parallel sides</td>
-        <td align="laft"><?php echo $SumOfParallelSides ?></td>
+        <td align="laft">Sum of parallel sides1</td>
+        <td align="laft"><?php echo $SumOfParallelSides1 ?></td>
+        </tr>
+        <tr>
+        <td align="laft">Sum of parallel sides2</td>
+        <td align="laft"><?php echo $SumOfParallelSides2 ?></td>
         </tr>
         <td align="laft">height</td>
         <td align="laft"><?php echo $height ?></td>
