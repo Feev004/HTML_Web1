@@ -5,7 +5,7 @@
         <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #333366;
+            background-color: #5CCAFE;
             margin: 0;
             padding: 0;
         }
@@ -41,7 +41,7 @@
             display: block;
             text-align: center;
             margin-top: 20px;
-            color: #4caf50;
+            color: #FF0000;
             text-decoration: none;
             font-weight: bold;
         }
