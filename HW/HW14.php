@@ -52,7 +52,7 @@
     }
 
     th:first-child {
-        width: 50px; /* ปรับขนาดตามที่ต้องการ */
+        width: 50px; 
     }
     </style>
 </head>
