@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
 <?php
 $bookId = $_POST['bookId'];
 $bookName = $_POST['bookName'];
@@ -53,5 +45,3 @@ echo '<br><br><a href="bookList1.php">กลับหน้า bookList1.php</a>
 mysqli_close($conn);
 echo '</center>';
 ?>
-</body>
-</html>
