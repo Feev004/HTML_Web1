@@ -45,37 +45,66 @@
 </head>
 
 <body>
-    <?php
-    // ตรวจสอบว่ามีการส่งข้อมูลมาจากแบบฟอร์มหรือไม่
-    if ($_SERVER["REQUEST_METHOD"] == "GET") {
-        // ดึงข้อมูลจากแบบฟอร์ม
-        $birthDate = isset($_GET["birthDate"]) ? $_GET["birthDate"] : "";
-        
-        // ตรวจสอบว่าวัน/เดือน/ปีเกิดไม่ว่างเปล่า
-        if (!empty($birthDate)) {
-            // แปลงวัน/เดือน/ปีเกิดเป็นวันที่ในรูปแบบ Y-m-d
-            $birthDate = date("Y-m-d", strtotime($birthDate));
-            
-            // ดึงวันที่ปัจจุบัน
-            $currentDate = date("Y-m-d");
-            
-            // คำนวณอายุ
-            $age = date_diff(date_create($birthDate), date_create($currentDate))->y;
-            
-            // แสดงผล
-            echo '<center>';
-            echo '<br><h3>อายุของนักศึกษา</h3>';
-            echo '<p>วัน/เดือน/ปีเกิด: ' . $birthDate . '</p>';
-            echo '<p>อายุ: ' . $age . ' ปี</p>';
-            echo '</center>';
-        } else {
-            // ถ้าไม่ได้กรอกวัน/เดือน/ปีเกิด
-            echo '<center>';
-            echo '<br><h3>กรุณากรอกวัน/เดือน/ปีเกิด</h3>';
-            echo '</center>';
-        }
-    }
-    ?>
+    <form method="get" action="HW01result.php">
+        <table border="1" align="center" width="500">
+            <tr>
+                <td colspan="2" align="center"><big>แบบฟอร์ม</big></td>
+            </tr>
+            <tr>
+                <td>ชื่อจริง : </td>
+                <td><input type="text" name="fName" size="20" value="" /> </td>
+
+            </tr>
+            <td>นามสกุล : </td>
+            <td><input type="text" name="lName" size="20" value="" /></td>
+
+            </tr>
+            </tr>
+            <td>เบอร์โทร : </td>
+            <td><input type="text" name="pNum" size="20" value="" /></td>
+
+            </tr>
+            </tr>
+            <td>งานอดิเรก : </td>
+            <td><input type="text" name="lWork" size="20" value="" /></td>
+
+            </tr>
+            <tr>
+                <td>เพศ : </td>
+                <td align="center">
+                    <input type="radio" name="gender" value="ชาย">ชาย<br>
+
+                    <input type="radio" name="gender" value="หญิง">หญิง<br>
+
+                </td>
+            </tr>
+            <tr>
+                <td>ศาสนา : </td>
+                <td align="center">
+                    <input type="radio" name="religion" value="พุทธ">พุทธ<br>
+
+                    <input type="radio" name="religion" value="คริสต์">คริสต์<br>
+
+                    <input type="radio" name="religion" value="อิสลาม">อิสลาม<br>
+
+                    <input type="radio" name="religion" value="ฮินดู">ฮินดู<br>
+
+                </td>
+            </tr>
+            <tr>
+                <td align="center">ที่อยู่:</td><td>
+                    <textarea name="address" cols="50" rows="5"></textarea>
+                    <br><br>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value=" ตกลง " />
+                    <input type="reset" value=" ลบข้อมูล " />
+                </td>
+            </tr>
+        </table>
+    </form>
 </body>
 
 </html>
