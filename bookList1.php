@@ -9,7 +9,7 @@ $dbName = "bookstore";
 $conn = mysqli_connect($hostname, $username, $password);
 if (!$conn)
 die("ไม่สามารถติดต่อกับ MySQL ได้");
-mysqli_select_db($conn, $dbName) or die("ไม่สามารถเลือกฐานข้อมูล bookStore
+mysqli_select_db($conn, $dbName) or die("ไม่สามารถเลือกฐานข้อมูล bookstore
 
 ได้");
 
@@ -28,7 +28,7 @@ echo '<tr><td align="left"><a href="bookInsert1.php">เพิ่มรายก
 echo '</table>';
 echo '<br><table width="500" border="1">';
 echo '<tr bgcolor="">';
-echo '<th width ="50" >ล าดับ</th>';
+echo '<th width ="50" >ลำดับ</th>';
 echo '<th width ="100">รหัสหนังสือ</th>';
 echo '<th width = "200">ชื่อหนังสือ</th>';
 echo '<th width ="80">แก้ไข</th>';
