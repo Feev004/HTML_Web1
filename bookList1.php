@@ -16,7 +16,7 @@ mysqli_select_db($conn, $dbName) or die("ไม่สามารถเลือ
 mysqli_query($conn,"set character_set_connection=utf8mb4");
 mysqli_query($conn,"set character_set_client=utf8mb4");
 mysqli_query($conn,"set character_set_results=utf8mb4");
-$sql = "select * from book order by bookid";
+$sql = "select * from bookid order by bookId";
 $result = mysqli_query ($conn, $sql);
 echo '<center>';
 echo '<br><h3>รายชื่อหนังสือ</h3>';
@@ -40,12 +40,12 @@ echo '<tr align="center" bgcolor="">';
 echo '<td>'.$row.'</td>';
 echo '<td><a
 
-href="bookDetail1_edit.php?bookid='.$rs[0].'">'.$rs[0].'</a></td>';
+href="bookDetail1_edit.php?bookId='.$rs[0].'">'.$rs[0].'</a></td>';
 echo '<td align="left">'.$rs[1].'</td>';
-echo '<td><a href="bookUpdate1.php?bookid='.$rs[0].'">[แก้ไข]
+echo '<td><a href="bookUpdate1.php?bookId='.$rs[0].'">[แก้ไข]
 
 </a></td>';
-echo '<td><a href="bookDelete1.php?bookid='.$rs[0].'"
+echo '<td><a href="bookDelete1.php?bookId='.$rs[0].'"
 onclick="return confirm(\' ยืนยันการลบข้อมูลหนังสือ '.$rs[1].'\')">[ลบ]</a></td>';
 
 echo '</tr>';
