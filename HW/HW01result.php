@@ -53,42 +53,34 @@
     </head>
 
     <body>
-        <?php
-            $fName = $_GET['fName'];
-            $lName = $_GET['lName'];
-            $gender = $_GET['gender'];
-            $religion = $_GET['religion'];
-            $address = $_GET['address'];
-            $pNum = $_GET['pNum'];
-            $lWork = $_GET['lWork'];
-            echo "<table align='center' width='20%' border='1'>";
-            echo "<tr><td colspan='2' align='center'><b>แบบฟอร์ม</b></td></tr>";
-            echo "<tr><td>ชื่อจริง :</td><td align='center'> <i> $fName </i>
-</td></tr>";
+    <?php
+        $fName = $_GET['fName'];
+        $lName = $_GET['lName'];
+        $gender = $_GET['gender'];
+        $religion = $_GET['religion'];
+        $address = $_GET['address'];
+        $pNum = $_GET['pNum'];
+        $lWork = $_GET['lWork'];
+        $birthday = $_GET['birthday'];
 
-            echo "<tr><td>นามสกุล :</td><td align='center'> <i> $lName </i>
+        // คำนวณอายุ
+        $currentDate = date("Y-m-d");
+        $age = date_diff(date_create($birthday), date_create($currentDate))->y;
 
-</td></tr>";
-            echo "<tr><td>เบอร์โทร:</td><td align='center'> <i> $pNum </i>
-
-</td></tr>";
-            echo "<tr><td>งานอดิเรก :</td><td align='center'> <i> $lWork </i>
-</td></tr>";
-
-            echo "<tr><td>เพศ :</td><td align='center'> <i> $gender </i>
-
-</td></tr>";
-
-            echo "<tr><td>ศาสนา :</td><td align='center'> <i> $religion </i>
-
-</td></tr>";
-            echo "<tr><td>ที่อยู่:</td><td align='center'> <i> $address</i>
-
-</td></tr>";
-
-            echo "</table>"
-        ?>
-        <center><a href="HW01.php"> กลับ </a></center>
-    </body>
+        echo "<table align='center' width='50%'>";
+        echo "<tr><td colspan='2' align='center'><h2>แบบฟอร์ม</h2></td></tr>";
+        echo "<tr><td>ชื่อจริง :</td><td align='center'> <i>$fName</i></td></tr>";
+        echo "<tr><td>นามสกุล :</td><td align='center'> <i>$lName</i></td></tr>";
+        echo "<tr><td>เบอร์โทร:</td><td align='center'> <i>$pNum</i></td></tr>";
+        echo "<tr><td>วันเกิด :</td><td align='center'> <i>$birthday</i></td></tr>";
+        echo "<tr><td>อายุ :</td><td align='center'> <i>$age ปี</i></td></tr>";
+        echo "<tr><td>งานอดิเรก :</td><td align='center'> <i>$lWork</i></td></tr>";
+        echo "<tr><td>เพศ :</td><td align='center'> <i>$gender</i></td></tr>";
+        echo "<tr><td>ศาสนา :</td><td align='center'> <i>$religion</i></td></tr>";
+        echo "<tr><td>ที่อยู่:</td><td align='center'> <i>$address</i></td></tr>";
+        echo "</table>"
+    ?>
+    <center><a href="Hw03.php">กลับ</a></center>
+</body>
 
 </html>
