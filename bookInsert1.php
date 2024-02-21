@@ -2,37 +2,37 @@
 function getTypeSelect()
 {
 global $conn;
-$sql = "select * from bookType order by typeId";
+$sql = "select * from typebook order by TypeID";
 $dbQuery = mysqli_query($conn, $sql);
 if (!$dbQuery)
 die("(functionDB:getTypeSelect) select bookType มีข้อผิดพลาด".mysqli_error());
 echo '<option value="">เลือกประเภทหนังสือ</option>';
 while($result=mysqli_fetch_object($dbQuery))
 {
-echo '<option value='.$result->typeId.'>'.$result->typeName.'</option>';
+echo '<option value='.$result->TypeID.'>'.$result->TypeName.'</option>';
 }
 }
 function getStatusSelect()
 {
 global $conn;
-$sql = "select * from bookstatus order by statusId";
+$sql = "select * from statusbook order by StatusID";
 $dbQuery = mysqli_query($conn, $sql);
 if (!$dbQuery)
 die("(functionDB:getStatusSelect) select status มีข้อผิดพลาด".mysqli_error());
 echo '<option value="">เลือกสถานะ</option>';
 while($result=mysqli_fetch_object($dbQuery))
 {
-echo '<option value='.$result->statusId.'>'.$result->statusName.'</option>';
+echo '<option value='.$result->StatusID.'>'.$result->StatusName.'</option>';
 }
 }
 $hostname = "localhost";
 $username = "root";
 $password = "";
-$dbName = "bookStore";
+$dbName = "bookstore";
 $conn = mysqli_connect($hostname, $username, $password);
 if (!$conn)
 die("ไม่สามารถติดต่อกับ mySQL ได้");
-mysqli_select_db($conn, $dbName) or die("ไม่สามารถเลือกฐานข้อมูล bookStore ได้");
+mysqli_select_db($conn, $dbName) or die("ไม่สามารถเลือกฐานข้อมูล bookstore ได้");
 mysqli_query($conn, "set character_set_connection=utf8mb4");
 mysqli_query($conn, "set character_set_client=utf8mb4");
 mysqli_query($conn, "set character_set_results=utf8mb4");
@@ -51,55 +51,55 @@ action="bookInsert2.php">
 </tr>
 <tr>
 <td width="200">รหัสหนังสือ : </td>
-<td width="400"><input type="text" name="bookId"
+<td width="400"><input type="text" name="BookID"
 
 size="10" maxlength="5"></td>
 </tr>
 <tr >
 <td width="200" >ชื่อหนังสือ : </td>
-<td><input type="text" name="bookName" size="50"
+<td><input type="text" name="BookName" size="50"
 
 maxlength="50"> </td>
 
 </tr>
 <tr>
 <td width="200">ประเภทหนังสือ : </td>
-<td><select name="typeId" ><?php getTypeSelect();
+<td><select name="TypeID" ><?php getTypeSelect();
 
 ?></select></td>
 
 </tr>
 <tr>
 <td width="200">สถานะหนังสือ : </td>
-<td><select name="statusId" ><?php getStatusSelect();
+<td><select name="StatusID" ><?php getStatusSelect();
 
 ?></select></td>
 
 </tr>
 <tr>
-<td width="200">ส านักพิมพ์ : </td>
-<td><input type="text" name="publish" maxlength="25"
+<td width="200">สำนักพิมพ์ : </td>
+<td><input type="text" name="Publish" maxlength="25"
 
 size="20"></td>
 
 </tr>
 <tr>
 <td width="200">ราคาที่ซื้อ : </td>
-<td ><input type="text" name="unitPrice" maxlength="25"
+<td ><input type="text" name="UnitPrice" maxlength="25"
 
 size="20"></td>
 
 </tr>
 <tr>
 <td width="200">ราคาที่เช่า : </td>
-<td><input type="text" name="unitRent" size="20"
+<td><input type="text" name="UnitRent" size="20"
 
 maxlength="25"></td>
 
 </tr>
 <tr >
-<td width="200">จ านวนวันที่เช่า : </td>
-<td><input type="text" name="dayAmount" maxlength="25"
+<td width="200">จำนวนวันที่เช่า : </td>
+<td><input type="text" name="DayAmount" maxlength="25"
 
 size="20"></td>
 

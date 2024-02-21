@@ -16,7 +16,7 @@ mysqli_select_db($conn, $dbName) or die("ไม่สามารถเลือ
 mysqli_query($conn,"set character_set_connection=utf8mb4");
 mysqli_query($conn,"set character_set_client=utf8mb4");
 mysqli_query($conn,"set character_set_results=utf8mb4");
-$sql = "select * from bookid order by bookId";
+$sql = "select * from book order by bookId";
 $result = mysqli_query ($conn, $sql);
 echo '<center>';
 echo '<br><h3>รายชื่อหนังสือ</h3>';
