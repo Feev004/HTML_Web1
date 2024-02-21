@@ -80,7 +80,7 @@
         echo "<tr><td>ที่อยู่:</td><td align='center'> <i>$address</i></td></tr>";
         echo "</table>"
     ?>
-    <center><a href="Hw03.php">กลับ</a></center>
+    <center><a href="HW01.php">กลับ</a></center>
 </body>
 
 </html>

@@ -45,7 +45,7 @@
 </head>
 
 <body>
-<form method="get" action="Hw03result.php">
+<form method="get" action="HW01result.php">
         <table border="2" align="center" width="500">
             <tr>
                 <td colspan="2" align="center"><big>แบบฟอร์ม</big></td>
