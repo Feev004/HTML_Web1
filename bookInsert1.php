@@ -2,10 +2,10 @@
 function getTypeSelect()
 {
 global $conn;
-$sql = "select * from typebook order by TypeID";
+$sql = "select * from typebook order by typeID";
 $dbQuery = mysqli_query($conn, $sql);
 if (!$dbQuery)
-die("(functionDB:getTypeSelect) select bookType มีข้อผิดพลาด".mysqli_error());
+die("(functionDB:getTypeSelect) select typebook มีข้อผิดพลาด".mysqli_error());
 echo '<option value="">เลือกประเภทหนังสือ</option>';
 while($result=mysqli_fetch_object($dbQuery))
 {
@@ -15,7 +15,7 @@ echo '<option value='.$result->TypeID.'>'.$result->TypeName.'</option>';
 function getStatusSelect()
 {
 global $conn;
-$sql = "select * from statusbook order by StatusID";
+$sql = "select * from statusbook order by statusID";
 $dbQuery = mysqli_query($conn, $sql);
 if (!$dbQuery)
 die("(functionDB:getStatusSelect) select status มีข้อผิดพลาด".mysqli_error());
@@ -27,12 +27,13 @@ echo '<option value='.$result->StatusID.'>'.$result->StatusName.'</option>';
 }
 $hostname = "localhost";
 $username = "root";
+
 $password = "";
-$dbName = "bookstore";
+$dbName = "bookStore";
 $conn = mysqli_connect($hostname, $username, $password);
 if (!$conn)
 die("ไม่สามารถติดต่อกับ mySQL ได้");
-mysqli_select_db($conn, $dbName) or die("ไม่สามารถเลือกฐานข้อมูล bookstore ได้");
+mysqli_select_db($conn, $dbName) or die("ไม่สามารถเลือกฐานข้อมูล bookStore ได้");
 mysqli_query($conn, "set character_set_connection=utf8mb4");
 mysqli_query($conn, "set character_set_client=utf8mb4");
 mysqli_query($conn, "set character_set_results=utf8mb4");
@@ -51,33 +52,34 @@ action="bookInsert2.php">
 </tr>
 <tr>
 <td width="200">รหัสหนังสือ : </td>
-<td width="400"><input type="text" name="BookID"
+<td width="400"><input type="text" name="bookID"
 
 size="10" maxlength="5"></td>
 </tr>
 <tr >
 <td width="200" >ชื่อหนังสือ : </td>
-<td><input type="text" name="BookName" size="50"
+<td><input type="text" name="bookName" size="50"
 
 maxlength="50"> </td>
 
 </tr>
 <tr>
 <td width="200">ประเภทหนังสือ : </td>
-<td><select name="TypeID" ><?php getTypeSelect();
+<td><select name="typeID" ><?php getTypeSelect();
 
 ?></select></td>
 
 </tr>
 <tr>
 <td width="200">สถานะหนังสือ : </td>
-<td><select name="StatusID" ><?php getStatusSelect();
+<td><select name="statusID" ><?php getStatusSelect();
 
 ?></select></td>
 
 </tr>
 <tr>
-<td width="200">สำนักพิมพ์ : </td>
+<td width="200">ส านักพิมพ์ : </td>
+
 <td><input type="text" name="Publish" maxlength="25"
 
 size="20"></td>
@@ -119,7 +121,7 @@ style="cursor:hand;">
 
 <input type="reset" name="reset" value="ยกเลิก" style="cursor:hand;">
 </form>
-<br><br><a href="bookList1.php">กลับหน้า bookList1.php</a>;
+<br><br><a href="bookList1.php">กลับหน้าหลัก</a>
 </center>
 </body>
 </html>
