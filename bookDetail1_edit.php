@@ -1,5 +1,32 @@
 <HTML>
-<HEAD><TITLE>Show Data Book</TITLE></HEAD>
+<HEAD><TITLE>Show Data Book</TITLE>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        a:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+    </style></HEAD>
 <BODY>
 <?php
 $hostname = "localhost";
