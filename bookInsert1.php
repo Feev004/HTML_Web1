@@ -121,7 +121,7 @@ style="cursor:hand;">
 
 <input type="reset" name="reset" value="ยกเลิก" style="cursor:hand;">
 </form>
-<br><br><a href="bookList1.php">กลับหน้าหลัก</a>
+<br><br><a href="bookmenu.php">กลับหน้าหลัก</a>
 </center>
 </body>
 </html>
