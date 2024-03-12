@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
+    <link rel="stylesheet" href="./css/1.css">
+
 </head>
 <body>
     <?php
@@ -17,14 +19,18 @@ if (isset($_SESSION['Username'])) {
     $password = "";
     $dbname = "car";
     $conn = mysqli_connect($hostname, $username, $password, $dbname);
-
+    echo "<header>";
+        
+        
+        
+        
     // Check connection
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
 
     // Carsale
-    echo "<h1>Carsale</h1>";
+    echo "<div class = 'h1'>Carsale</div>";
 
     // User
     $sqltxt = "SELECT * FROM users where usersName = '$Username'";
@@ -33,9 +39,9 @@ if (isset($_SESSION['Username'])) {
     // Check if the query was successful
     if ($result) {
         $rs = mysqli_fetch_array($result);
-        echo "{$rs['usersName']}";
-        echo "ติดต่อ";
-        echo "<a href='index.php'>logout</a>";
+        echo "<div class = 'h2'>{$rs['usersName']}</div>";
+        echo "<div class = 'h3'>ติดต่อ</div>";
+        echo "<div class = 'h4'><a href='index.php'>logout</a></div>";
 
         
     } else {
@@ -47,7 +53,7 @@ if (isset($_SESSION['Username'])) {
     echo "You are not logged in.";
     echo "<br><a href='index.php'>Click here to login</a>";
 }
-
+echo "</header>";
 // ค้นหา
 echo "<form action='checkinsert.php' method='post'>";
 echo "<br>ค้นหา<input type='text'name='carin' size='100'><td colspan='2' align='center'>";
@@ -81,7 +87,7 @@ $result = mysqli_query ($conn, $sql);
 
 while ($rs = mysqli_fetch_array($result))
 {
-
+    echo "<div class = 'T'>";
 if (!empty($rs[11])) {
     // กำหนด Path ของรูปภาพ
     $imagePath = "./pictures/{$rs[11]}"; // เปลี่ยนเส้นทางตามโครงสร้างของโปรเจคของคุณ
@@ -95,10 +101,9 @@ if (!empty($rs[11])) {
 // echo '<td>'.$rs[7].'$</td><br>';
 echo '<td>'.$rs[7].'บาท</a></td><br>';
 echo '<td><a href="showcar.php?carName='.$rs[1].'">'.$rs[1].'</a></td><br>';
-
-
 }
 echo '</table>';
+echo "</div>";
 mysqli_close ( $conn );
 ?>
 </body>

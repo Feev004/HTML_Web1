@@ -11,8 +11,6 @@
 session_start();
 
 if (isset($_SESSION['Username'])) {
-    $Username = $_SESSION['Username'];
-
     $hostname = "localhost";
     $username = "root";
     $password = "";
@@ -21,6 +19,7 @@ if (isset($_SESSION['Username'])) {
     // Create connection
     $conn = new mysqli($hostname, $username, $password, $dbname);
 
+    $Username = $_SESSION['Username'];
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -43,34 +42,45 @@ if (isset($_SESSION['Username'])) {
 
     // Showcar
     $id = $_GET['carName'];
-
-    $sql = "SELECT * FROM car WHERE carName = ?";
-    $stmt = $conn->prepare($sql);
+    
+    //car
+    $sqlcar = "SELECT * FROM car WHERE carName = ?";
+    $stmt = $conn->prepare($sqlcar);
     $stmt->bind_param("s", $id);
     $stmt->execute();
     $result = $stmt->get_result();
     $data = $result->fetch_assoc();
+    //brand
+    $CID = $data["carID"];
+    $sqlbrand = "SELECT * FROM car JOIN brand ON car.brandID = brand.brandID JOIN typecar ON car.typeCarID = typecar.typeCarID JOIN status ON car.statusID = status.statusID WHERE car.carID = 001";
+    $stmtbrand = $conn->query($sqlbrand);
 
     if ($data) {
         $Path = "pictures/"; // Specify the path of the image files stored on the server
         $image = "<img src='$Path{$data['picture']}' valign='middle' align='center'>";
 
         echo "<table border='1'>";
-        echo "<br><tr>" . $image . "</tr><br>";
-        echo "<tr>" . $data["carID"] . "</tr><br>";
-        echo "<tr>" . $data["carName"] . "</tr><br>";
-        echo "<tr>" . $data["brandID"] . "</tr><br>";
-        echo "<tr>" . $data["typeCarID"] . "</tr><br>";
-        echo "<tr>" . $data["produceYear"] . "</tr><br>";
-        echo "<tr>" . $data["color"] . "</tr><br>";
-        echo "<tr>" . $data["distance"] . "</tr><br>";
-        echo "<tr>" . $data["price"] . "</tr><br>";
-        echo "<tr>" . $data["tankID"] . "</tr><br>";
-        echo "<tr>" . $data["engineID"] . "</tr><br>";
-        echo "<tr>" . $data["moreInfo"] . "</tr><br>";
         
-        echo "<tr>" . $data["vehicleID"] . "</tr><br>";
-        echo "<tr>" . $data["statusID"] . "</tr><br>";
+        while($i = mysqli_fetch_assoc($stmtbrand) ){
+            echo "<br><tr>" . $image . "</tr><br>";
+            echo "<tr>" . $data["carID"] . "</tr><br>";
+            echo "<tr>" . $data["carName"] . "</tr><br>";
+            echo "<tr>".$i["brandName"]."</tr><br>";
+            echo "<tr>".$i["typeCarName"]."</tr><br>";
+            echo "<tr>" . $data["produceYear"] . "</tr><br>";
+            echo "<tr>" . $data["color"] . "</tr><br>";
+            echo "<tr>" . $data["distance"] . "</tr><br>";
+            echo "<tr>" . $data["price"] . "</tr><br>";
+            echo "<tr>" . $data["tankID"] . "</tr><br>";
+            echo "<tr>" . $data["engineID"] . "</tr><br>";
+            echo "<tr>" . $data["moreInfo"] . "</tr><br>";
+            echo "<tr>" . $data["vehicleID"] . "</tr><br>";
+            echo "<tr>".$i["statusName"]."</tr><br>";
+        }
+        
+        //while($i = mysqli_fetch_assoc($stmtbrand) ){
+        //    echo "<tr>".$i["statusName"]."</tr><br>";
+        //}
         echo "</table>";
         echo '<br><a href="buy.php?carName='.$data["carID"].'">Buy</a>';
         // echo '<td><a href="showcar.php?carName='.$rs[1].'">'.$rs[1].'</a></td><br>';
