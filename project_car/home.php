@@ -33,8 +33,9 @@ if (isset($_SESSION['Username'])) {
     // Check if the query was successful
     if ($result) {
         $rs = mysqli_fetch_array($result);
-        echo "{$rs['usersName']}ติดต่อ";
-        echo "<br><a href='index.php'>logout</a>";
+        echo "{$rs['usersName']}";
+        echo "ติดต่อ";
+        echo "<a href='index.php'>logout</a>";
 
         
     } else {
@@ -85,8 +86,9 @@ if (!empty($rs[11])) {
     // กำหนด Path ของรูปภาพ
     $imagePath = "./pictures/{$rs[11]}"; // เปลี่ยนเส้นทางตามโครงสร้างของโปรเจคของคุณ
 
-    // แสดงรูปภาพ
-    echo '<br><td><a href="showcarimage.php?carImage=' . $imagePath . '"><img src="' . $imagePath . '" alt="Car Image"></a></td><br>';
+    // แสดงรูปภาพ 
+    //<a href="showcarimage.php?carImage=' . $imagePath . '">
+    echo '<br><td><img src="' . $imagePath . '" alt="Car Image"></a></td><br>';
 } else {
     echo "No image available<br>";
 }
