@@ -42,9 +42,7 @@ mysqli_query($conn, "set character_set_results=utf8mb4");
 <head><title>bookInsert1.php</title></head>
 <body >
 <center>
-<form enctype="multipart/form-data" name="save" method="post"
-
-action="bookInsert2.php">
+<form enctype="multipart/form-data" name="save" method="post" action="bookInsert2.php">
 
 <br><br><table width="700" border="1" bgcolor="#ffffff">
 <tr>
@@ -52,9 +50,7 @@ action="bookInsert2.php">
 </tr>
 <tr>
 <td width="200">รหัสหนังสือ : </td>
-<td width="400"><input type="text" name="bookID"
-
-size="10" maxlength="5"></td>
+<td width="400"><input type="text" name="bookID"size="10" maxlength="5"></td>
 </tr>
 <tr >
 <td width="200" >ชื่อหนังสือ : </td>

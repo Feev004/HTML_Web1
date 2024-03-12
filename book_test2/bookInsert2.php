@@ -33,7 +33,6 @@ echo '<b><li>คุณไม่ได้เลือกรูปภาพ</li></
 else
 {
 move_uploaded_file($_FILES["imageFile"]["tmp_name"],"pictures/".$_FILES["imageFile"]["name"]);
-
 $picture = $_FILES['imageFile']['name'];
 }
 $sql = "insert into book(bookId, bookName, typeId, statusId, publish, unitPrice, unitRent,
